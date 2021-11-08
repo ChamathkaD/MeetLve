@@ -45,6 +45,10 @@
                             <label for="gender" class="block mb-4">
                                 <span class="text-gray-700">I'm a:</span>
                                 <select
+                                    type="text"
+                                    id="gender"
+                                    name="gender"
+
                                     class="
 										block
 										w-full
@@ -54,21 +58,30 @@
 										py-3
 										border-gray-200
 										focus:ring-0 focus:outline-none focus:border-pink-400
+										 @error('gender')
+                                        border-red-500
+                                        @enderror
 									"
                                 >
                                     <option selected disabled>Gender and preferences</option>
-                                    <option>a woman interested in men</option>
-                                    <option>a man interested in women</option>
-                                    <option>a woman interested in women</option>
-                                    <option>a man interested in men</option>
+                                    <option value="a woman interested in men">a woman interested in men</option>
+                                    <option value="a man interested in women">a man interested in women</option>
+                                    <option value="a woman interested in women">a woman interested in women</option>
+                                    <option value="a man interested in men">a man interested in men</option>
                                 </select>
+                                @error('gender')
+                                <p class="text-red-500">{{ $message }}</p>
+                                @enderror
                             </label>
 
                             <div class="grid grid-cols-12 gap-6">
                                 <div class="col-span-4">
-                                    <label class="block mb-4">
+                                    <label for="day" class="block mb-4">
                                         <span class="text-gray-700">Day</span>
                                         <select
+                                            type="text"
+                                            id="day"
+                                            name="day"
                                             class="
 												block
 												w-full
@@ -78,20 +91,30 @@
 												py-3
 												border-gray-200
 												focus:ring-0 focus:outline-none focus:border-pink-400
+
+												 @error('day')
+                                                border-red-500
+                                                @enderror
 											"
                                         >
                                             <option selected disabled>Day</option>
-                                            <option>a woman interested in men</option>
-                                            <option>a man interested in women</option>
-                                            <option>a woman interested in women</option>
-                                            <option>a man interested in men</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="4">4</option>
+                                            <option value="6">6</option>
                                         </select>
+                                        @error('day')
+                                        <p class="text-red-500">{{ $message }}</p>
+                                        @enderror
                                     </label>
                                 </div>
                                 <div class="col-span-4">
-                                    <label class="block mb-4">
-                                        <span class="text-gray-700">Month</span>
+                                    <label for="month" class="block mb-4">
+                                        <span  class="text-gray-700">Month</span>
                                         <select
+                                            type="text"
+                                            id="month"
+                                            name="month"
                                             class="
 												block
 												w-full
@@ -101,20 +124,30 @@
 												py-3
 												border-gray-200
 												focus:ring-0 focus:outline-none focus:border-pink-400
+
+												 @error('month')
+                                                border-red-500
+                                                @enderror
 											"
                                         >
                                             <option selected disabled>Month</option>
-                                            <option>a woman interested in men</option>
-                                            <option>a man interested in women</option>
-                                            <option>a woman interested in women</option>
-                                            <option>a man interested in men</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
                                         </select>
+                                        @error('month')
+                                        <p class="text-red-500">{{ $message }}</p>
+                                        @enderror
                                     </label>
                                 </div>
                                 <div class="col-span-4">
-                                    <label class="block mb-4">
+                                    <label for="year" class="block mb-4">
                                         <span class="text-gray-700">Year</span>
                                         <select
+                                            type="text"
+                                            id="year"
+                                            name="year"
                                             class="
 												block
 												w-full
@@ -124,22 +157,30 @@
 												py-3
 												border-gray-200
 												focus:ring-0 focus:outline-none focus:border-pink-400
+												 @error('year')
+                                                border-red-500
+                                                @enderror
 											"
                                         >
                                             <option selected disabled>Year</option>
-                                            <option>a woman interested in men</option>
-                                            <option>a man interested in women</option>
-                                            <option>a woman interested in women</option>
-                                            <option>a man interested in men</option>
+                                            <option value="1995">1995</option>
+                                            <option value="2000">2000</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1999">1999</option>
                                         </select>
+                                        @error('year')
+                                        <p class="text-red-500">{{ $message }}</p>
+                                        @enderror
                                     </label>
                                 </div>
                             </div>
 
-                            <label class="block mb-2">
+                            <label for="email" class="block mb-2">
                                 <span class="text-gray-700">Email Address</span>
                                 <input
                                     type="email"
+                                    id="email"
+                                    name="email"
                                     class="
 										block
 										w-full
@@ -148,16 +189,50 @@
 										mt-1
 										border border-gray-200
 										focus:outline-none focus:border-pink-400 focus:ring-0
+										 @error('email')
+                                        border-red-500
+                                        @enderror
+
 									"
                                     placeholder="name@email.com"
                                 />
+                                @error('email')
+                                <p class="text-red-500">{{ $message }}</p>
+                                @enderror
                             </label>
 
-                            <label class="block mb-2">
+                            <label for="password" class="block mb-2">
                                 <span class="text-gray-700">Password</span>
                                 <input
                                     type="password"
                                     name="password"
+                                    id="password"
+                                    class="
+										block
+										w-full
+										mt-1
+										px-4
+										py-3
+										mb-2
+										border border-gray-200
+										focus:outline-none focus:border-pink-400 focus:ring-0
+										 @error('password')
+                                        border-red-500
+                                        @enderror
+									"
+                                    placeholder="Password"
+                                />
+                                @error('password')
+                                <p class="text-red-500">{{ $message }}</p>
+                                @enderror
+                            </label>
+
+                            <label for="password_confirmation" class="block mb-2">
+                                <span class="text-gray-700">Confirm Password</span>
+                                <input
+                                    type="password"
+                                    name="password_confirmation"
+                                    id="password_confirmation"
                                     class="
 										block
 										w-full
@@ -168,14 +243,18 @@
 										border border-gray-200
 										focus:outline-none focus:border-pink-400 focus:ring-0
 									"
-                                    placeholder="Password"
+                                    placeholder="Confirm Password"
                                 />
+
                             </label>
 
                             <div class="py-2 px-2">
-                                <label class="inline-flex items-baseline">
+                                <label for="privacy_Policy" class="inline-flex items-baseline">
                                     <input
                                         type="checkbox"
+                                        name="privacy_Policy"
+                                        id="privacy_Policy"
+                                        value="1"
                                         class="
 											rounded
 											border-gray-300
@@ -186,17 +265,25 @@
 											focus:ring-offset-0
 											focus:ring-pink-200
 											focus:ring-opacity-50
+											 @error('privacy_Policy')
+                                            border-red-500
+                                            @enderror
+
 										"
                                     />
 
-                                    <span class="ml-2 text-gray-800 cursor-pointer"
+                                    <span  class="ml-2 text-gray-800 cursor-pointer"
                                     >By clicking, you agree to our <a href="#" class="underline text-gray-600 hover:text-pink-500">Terms of Service</a> (including the mandatory arbitration of disputes) and consent to our <a href="#" class="underline text-gray-600 hover:text-pink-500">Privacy Policy</a></span
                                     >
                                 </label>
+                                @error('privacy_Policy')
+                                <p class="text-red-500">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="block mt-2">
                                 <button
+                                    type="submit"
                                     class="w-full px-3 py-4 font-medium text-white bg-pink-500"
                                 >
                                     Sign Up
@@ -204,7 +291,7 @@
                             </div>
                             <p class="w-full mt-2 text-sm text-center text-gray-500">
                                 Already Registered?
-                                <a href="#_" class="text-pink-500 hover:text-pink-600 underline"
+                                <a href="{{ route('login') }}" class="text-pink-500 hover:text-pink-600 underline"
                                 >Login</a
                                 >
                             </p>
