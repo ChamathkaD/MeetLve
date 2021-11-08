@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="w-full px-8 py-5 sm:py-16 xl:px-8 bg-no-repeat bg-cover bg-center" style="background-image: url('./img/sign-in-bg.webp');">
+    <section class="w-full px-8 py-5 sm:py-16 xl:px-8 bg-no-repeat bg-cover bg-center" style="background-image: url({{ asset('img/sign-in-bg.webp') }});">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col items-center md:flex-row">
                 <div class="w-full space-y-5 md:w-7/12 md:pr-16">

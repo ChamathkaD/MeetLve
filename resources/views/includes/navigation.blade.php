@@ -122,7 +122,7 @@
                 </div>
 
                 <a
-                    href="#"
+                    href="{{ route('register') }}"
                     class="
 								text-base
 								font-medium
@@ -141,7 +141,7 @@
                 </a>
 
                 <a
-                    href="#"
+                    href="{{ route('login') }}"
                     class="
 								inline-flex
 								items-center
