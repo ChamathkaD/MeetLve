@@ -82,7 +82,7 @@
 									focus:outline-none focus:border-pink-400 focus:ring-0
 									@error('password')
                                        border-red-500
-@enderror
+                                    @enderror
 								"
                                    placeholder="Password"
                                />

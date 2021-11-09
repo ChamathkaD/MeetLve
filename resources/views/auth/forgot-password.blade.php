@@ -6,8 +6,10 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-center">
                 <div class="w-full md:w-3/6 mt-16 md:mt-0">
-                    <div
-                        class="
+                    <form action="{{ route('password.email') }}" method="post">
+                        @csrf
+                        <div
+                            class="
 								relative
 								z-10
 								h-auto
@@ -19,22 +21,29 @@
 								lg:shadow-2xl
 								px-7
 								rounded-3xl
+
 							"
-                    >
-                        <h3 class="text-2xl font-medium mb-2">
-                            <i class='bx bx-envelope bx-fw'></i>
-                            Reset Your Password
-                        </h3>
+                        >
+                            <h3 class="text-2xl font-medium mb-2">
+                                <i class='bx bx-envelope bx-fw'></i>
+                                Reset Your Password
+                            </h3>
 
-                        <p class="text-gray-400 mb-3">
-                            Enter your email address to receive an email with a link to reset your password.
-                        </p>
+                            <p class="text-gray-400 mb-3">
+                                Enter your email address to receive an email with a link to reset your password.
+                            </p>
 
-                        <label class="block mb-2">
-                            <span class="text-gray-700">Email Address:</span>
-                            <input
-                                type="email"
-                                class="
+                            <x-auth-session-status/>
+
+
+
+                            <label class="block mb-2">
+                                <span class="text-gray-700">Email Address:</span>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    :value="old('email')"
+                                    class="
 										block
 										w-full
 										px-4
@@ -42,20 +51,28 @@
 										mt-1
 										border border-gray-200
 										focus:outline-none focus:border-pink-400 focus:ring-0
+										@error('email')
+                                        border-red-500
+                                        @enderror
 									"
-                                placeholder="name@email.com"
-                            />
-                        </label>
+                                    placeholder="name@email.com"
+                                />
+                                @error('email')
+                                <p class="text-red-500">{{ $message }}</p>
+                                @enderror
+                            </label>
 
-                        <div class="block mt-2">
-                            <button
-                                class="w-full px-3 py-3 font-medium text-white bg-pink-500"
-                            >
-                                Email Password Reset Link
-                            </button>
+                            <div class="block mt-2">
+                                <button
+                                    type="submit"
+                                    class="w-full px-3 py-3 font-medium text-white bg-pink-500"
+                                >
+                                    Email Password Reset Link
+                                </button>
+                            </div>
+
                         </div>
-
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

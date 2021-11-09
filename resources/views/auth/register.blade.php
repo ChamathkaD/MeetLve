@@ -48,7 +48,6 @@
                                     type="text"
                                     id="gender"
                                     name="gender"
-
                                     class="
 										block
 										w-full
