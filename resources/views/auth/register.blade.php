@@ -183,9 +183,7 @@
                                     name="email"
                                     :value="old('email')"
                                     placeholder="name@email.com"
-
-
-
+                                    class="@error('email') border-red-500 @enderror"
                                 />
                                 @error('email')
                                 <p class="text-red-500">{{ $message }}</p>
