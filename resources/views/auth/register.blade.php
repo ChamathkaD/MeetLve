@@ -42,8 +42,8 @@
                                 Create Your Account
                             </h3>
 
-                            <label for="gender" class="block mb-4">
-                                <span class="text-gray-700">I'm a:</span>
+                            <div class="mb-4">
+                                <x-label for="gender" :value="__('I am a:')" />
                                 <select
                                     type="text"
                                     id="gender"
@@ -71,12 +71,13 @@
                                 @error('gender')
                                 <p class="text-red-500">{{ $message }}</p>
                                 @enderror
-                            </label>
+                            </div>
 
                             <div class="grid grid-cols-12 gap-6">
                                 <div class="col-span-4">
-                                    <label for="day" class="block mb-4">
-                                        <span class="text-gray-700">Day</span>
+                                    <div class="mb-4">
+                                        <x-label for="day" :value="__('Day')" />
+
                                         <select
                                             type="text"
                                             id="day"
@@ -105,11 +106,11 @@
                                         @error('day')
                                         <p class="text-red-500">{{ $message }}</p>
                                         @enderror
-                                    </label>
+                                    </div>
                                 </div>
                                 <div class="col-span-4">
-                                    <label for="month" class="block mb-4">
-                                        <span  class="text-gray-700">Month</span>
+                                    <div class="mb-4">
+                                        <x-label for="month" :value="__('Month')" />
                                         <select
                                             type="text"
                                             id="month"
@@ -138,11 +139,11 @@
                                         @error('month')
                                         <p class="text-red-500">{{ $message }}</p>
                                         @enderror
-                                    </label>
+                                    </div>
                                 </div>
                                 <div class="col-span-4">
-                                    <label for="year" class="block mb-4">
-                                        <span class="text-gray-700">Year</span>
+                                    <div class="mb-4">
+                                        <x-label for="year" :value="__('Year')" />
                                         <select
                                             type="text"
                                             id="year"
@@ -170,38 +171,29 @@
                                         @error('year')
                                         <p class="text-red-500">{{ $message }}</p>
                                         @enderror
-                                    </label>
+                                    </div>
                                 </div>
                             </div>
 
-                            <label for="email" class="block mb-2">
-                                <span class="text-gray-700">Email Address</span>
-                                <input
+                            <div class="mb-4">
+                                <x-label for="email" :value="__('Email')" />
+                                <x-input
                                     type="email"
                                     id="email"
                                     name="email"
-                                    class="
-										block
-										w-full
-										px-4
-										py-3
-										mt-1
-										border border-gray-200
-										focus:outline-none focus:border-pink-400 focus:ring-0
-										 @error('email')
-                                        border-red-500
-                                        @enderror
-
-									"
+                                    :value="old('email')"
                                     placeholder="name@email.com"
+
+
+
                                 />
                                 @error('email')
                                 <p class="text-red-500">{{ $message }}</p>
                                 @enderror
-                            </label>
+                            </div>
 
-                            <label for="password" class="block mb-2">
-                                <span class="text-gray-700">Password</span>
+                            <div class="mb-4">
+                                <x-label for="password" :value="__('Password')" />
                                 <input
                                     type="password"
                                     name="password"
@@ -224,10 +216,10 @@
                                 @error('password')
                                 <p class="text-red-500">{{ $message }}</p>
                                 @enderror
-                            </label>
+                            </div>
 
-                            <label for="password_confirmation" class="block mb-2">
-                                <span class="text-gray-700">Confirm Password</span>
+                            <div class="mb-4">
+                                <x-label for="password_confirmation" :value="__('Confirm Password')" />
                                 <input
                                     type="password"
                                     name="password_confirmation"
@@ -245,40 +237,34 @@
                                     placeholder="Confirm Password"
                                 />
 
-                            </label>
-
-                            <div class="py-2 px-2">
-                                <label for="privacy_Policy" class="inline-flex items-baseline">
-                                    <input
-                                        type="checkbox"
-                                        name="privacy_Policy"
-                                        id="privacy_Policy"
-                                        value="1"
-                                        class="
-											rounded
-											border-gray-300
-											text-pink-600
-											shadow-sm
-											focus:border-pink-300
-											focus:ring
-											focus:ring-offset-0
-											focus:ring-pink-200
-											focus:ring-opacity-50
-											 @error('privacy_Policy')
-                                            border-red-500
-                                            @enderror
-
-										"
-                                    />
-
-                                    <span  class="ml-2 text-gray-800 cursor-pointer"
-                                    >By clicking, you agree to our <a href="#" class="underline text-gray-600 hover:text-pink-500">Terms of Service</a> (including the mandatory arbitration of disputes) and consent to our <a href="#" class="underline text-gray-600 hover:text-pink-500">Privacy Policy</a></span
-                                    >
-                                </label>
-                                @error('privacy_Policy')
-                                <p class="text-red-500">{{ $message }}</p>
-                                @enderror
                             </div>
+
+                            <div class="py-2 px-2 inline-flex items-baseline">
+                                <input
+                                    type="checkbox"
+                                    name="privacy_Policy"
+                                    id="privacy_Policy"
+                                    value="1"
+                                    class="
+										rounded
+										border-gray-300
+										text-pink-600
+										shadow-sm
+										focus:border-pink-300
+										focus:ring
+										focus:ring-offset-0
+										focus:ring-pink-200
+										focus:ring-opacity-50
+									"
+                                />
+                                <label for="privacy_Policy" class="ml-2 text-gray-800 cursor-pointer">
+                                    By clicking, you agree to our <a href="#" class="underline text-gray-600 hover:text-pink-500">Terms of Service</a> (including the mandatory arbitration of disputes) and consent to our <a href="#" class="underline text-gray-600 hover:text-pink-500">Privacy Policy</a>
+                                </label>
+                            </div>
+                            @error('privacy_Policy')
+                            <p class="text-red-500">{{ $message }}</p>
+                            @enderror
+
 
                             <div class="block mt-2">
                                 <button
@@ -489,6 +475,7 @@
             </div>
         </div>
     </section>
-</x-guest-layout>
+
+  </x-guest-layout>
 
 
