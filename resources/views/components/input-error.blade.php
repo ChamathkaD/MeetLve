@@ -1,5 +1,6 @@
 @props(['for'])
 
+
 @error('$for')
-border-red-500
+<p class="text-red-500">{{ $message }}</p>
 @enderror
