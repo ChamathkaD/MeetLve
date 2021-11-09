@@ -1,6 +1,5 @@
-@props(['for'])
+@props(['forError'])
 
-
-@error('$for')
-<p class="text-red-500">{{ $message }}</p>
+@error($forError)
+    <p class="text-red-500">{{ $message }}</p>
 @enderror
