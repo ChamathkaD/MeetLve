@@ -43,53 +43,18 @@
 							"
                         >
                             <h3 class="mb-6 text-2xl font-medium">Sign in to your Account</h3>
-                            <div>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    class="
-									block
-									w-full
-									px-4
-									py-3
-									mb-4
-									border border-gray-200
-									focus:outline-none focus:border-pink-400 focus:ring-0
-									@error('email')
-                                        border-red-500
-                                     @enderror
-								"
-                                    placeholder="Email address"
-                                />
-                                @error('email')
-                                <p class="text-red-500">{{ $message }}</p>
-                                @enderror
+                            <div class="mb-4">
+                                <x-input type="email" id="email" name="email"
+                                         class=" @error('email')border-red-500@enderror" placeholder="name@email.com" />
+                                <x-input-error forError="email" />
                             </div>
 
 
-
-                           <div>
-                               <input
-                                   type="password"
-                                   name="password"
-                                   class="
-									block
-									w-full
-									px-4
-									py-3
-									mb-2
-									border border-gray-200
-									focus:outline-none focus:border-pink-400 focus:ring-0
-									@error('password')
-                                       border-red-500
-                                    @enderror
-								"
-                                   placeholder="Password"
-                               />
-                               @error('password')
-                               <p class="text-red-500">{{ $message }}</p>
-                               @enderror
-                           </div>
+                            <div class="mb-4">
+                                <x-input type="password" name="password" id="password"
+                                         class=" @error('password')border-red-500 @enderror" placeholder="Password" />
+                                <x-input-error forError="password" />
+                            </div>
 
 
                             <div class="py-2 px-2 flex justify-between">
