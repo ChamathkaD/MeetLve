@@ -31,7 +31,14 @@
                                 Reset Password
                             </h3>
 
-                            <label for="email" class="block mb-2">
+                            <div class="block mb-2">
+                                <x-label for="email" :value="__('Email Address:')" />
+                                <x-input type="email" id="email" name="email" :value="old('email', $request->email)"
+                                         class=" @error('email')border-red-500@enderror" placeholder="name@email.com" />
+                                <x-input-error forError="email" />
+                            </div>
+
+                            {{--<label for="email" class="block mb-2">
                                 <span class="text-gray-700">Email Address</span>
                                 <input
                                     type="email"
@@ -55,9 +62,16 @@
                                 @error('email')
                                 <p class="text-red-500">{{ $message }}</p>
                                 @enderror
-                            </label>
+                            </label>--}}
 
-                            <label for="password" class="block mb-2">
+                            <div class="block mb-2">
+                                <x-label for="password" :value="__('Password')" />
+                                <x-input type="password" name="password" id="password"
+                                         class=" @error('password')border-red-500 @enderror" placeholder="Password" />
+                                <x-input-error forError="password" />
+                            </div>
+
+                          {{--  <label for="password" class="block mb-2">
                                 <span class="text-gray-700">Password</span>
                                 <input
                                     type="password"
@@ -80,9 +94,15 @@
                                 @error('password')
                                 <p class="text-red-500">{{ $message }}</p>
                                 @enderror
-                            </label>
+                            </label>--}}
 
-                            <label for="password_confirmation" class="block mb-2">
+                            <div class="block mb-2">
+                                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                                <x-input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" />
+
+                            </div>
+
+                            {{--<label for="password_confirmation" class="block mb-2">
                                 <span  class="text-gray-700">Confirm Password</span>
                                 <input
                                     type="password"
@@ -99,7 +119,7 @@
 									"
                                     placeholder="Re-enter Password"
                                 />
-                            </label>
+                            </label>--}}
 
                             <div class="block mt-2">
                                 <button
