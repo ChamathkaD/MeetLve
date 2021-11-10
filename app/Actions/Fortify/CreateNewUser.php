@@ -30,7 +30,7 @@ class CreateNewUser implements CreatesNewUsers
             ],
             'gender' => ['required', 'string', ],
             'day' => ['required', 'numeric', ],
-            'month' => ['required', 'numeric', ],
+            'month' => ['required', ],
             'year' => ['required', 'numeric', ],
             'privacy_Policy' => ['required',  ],
 
