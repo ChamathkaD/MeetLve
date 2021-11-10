@@ -35,32 +35,13 @@
 
                             <x-auth-session-status/>
 
+                            <div class="block mb-2">
+                                <x-label for="email" :value="__('Email Address:')" />
+                                <x-input type="email" id="email" name="email" :value="old('email')"
+                                         class=" @error('email')border-red-500@enderror" placeholder="name@email.com" />
+                                <x-input-error forError="email" />
+                            </div>
 
-
-                            <label class="block mb-2">
-                                <span class="text-gray-700">Email Address:</span>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    :value="old('email')"
-                                    class="
-										block
-										w-full
-										px-4
-										py-3
-										mt-1
-										border border-gray-200
-										focus:outline-none focus:border-pink-400 focus:ring-0
-										@error('email')
-                                        border-red-500
-                                        @enderror
-									"
-                                    placeholder="name@email.com"
-                                />
-                                @error('email')
-                                <p class="text-red-500">{{ $message }}</p>
-                                @enderror
-                            </label>
 
                             <div class="block mt-2">
                                 <button
