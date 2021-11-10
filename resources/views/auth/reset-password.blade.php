@@ -1,7 +1,7 @@
 <x-guest-layout>
     <section
         class="w-full px-8 py-5 sm:py-16 xl:px-8 bg-no-repeat"
-       {{-- style="background-image: url('{{ route('img/sign-in-bg.webp') }}')"--}}
+           {{-- style="background-image: url( {{ route('img/sign-in-bg.webp') }})"--}}
     >
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-center">

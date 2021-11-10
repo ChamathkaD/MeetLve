@@ -44,7 +44,7 @@
                         >
                             <h3 class="mb-6 text-2xl font-medium">Sign in to your Account</h3>
                             <div class="mb-4">
-                                <x-input type="email" id="email" name="email"
+                                <x-input type="email" id="email" name="email" :value="old('email')"
                                          class=" @error('email')border-red-500@enderror" placeholder="name@email.com" />
                                 <x-input-error forError="email" />
                             </div>

@@ -96,7 +96,7 @@
 
                             <div class="mb-4">
                                 <x-label for="email" :value="__('Email')" />
-                                <x-input type="email" id="email" name="email"
+                                <x-input type="email" id="email" name="email" :value="old('email')"
                                     class=" @error('email')border-red-500@enderror" placeholder="name@email.com" />
                                 <x-input-error forError="email" />
                             </div>
@@ -147,6 +147,195 @@
                             </p>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div
+            class="
+					container
+					items-center
+					max-w-6xl
+					px-10
+					mx-auto
+					sm:px-20
+					md:px-32
+					lg:px-16
+				"
+        >
+            <div class="flex flex-wrap items-center -mx-3">
+                <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
+                    <div class="w-full lg:max-w-md">
+                        <h2
+                            class="
+									mb-4
+									text-3xl
+									font-bold
+									leading-tight
+									tracking-tight
+									sm:text-4xl
+									font-heading
+								"
+                        >
+                            Jam-packed with all the tools you need to succeed!
+                        </h2>
+                        <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">
+                            It's never been easier to build a business of your own. Our
+                            tools will help you with the following:
+                        </p>
+                        <ul>
+                            <li class="flex items-center py-2 space-x-4 xl:py-3">
+                                <i class="bx bx-heart text-pink-500 bx-md bx-fw"></i>
+                                <span class="font-medium text-gray-500"
+                                >Faster Processing and Delivery</span
+                                >
+                            </li>
+                            <li class="flex items-center py-2 space-x-4 xl:py-3">
+                                <i
+                                    class="bx bx-calendar-heart text-yellow-500 bx-md bx-fw"
+                                ></i>
+                                <span class="font-medium text-gray-500"
+                                >Out of the Box Tracking and Monitoring</span
+                                >
+                            </li>
+                            <li class="flex items-center py-2 space-x-4 xl:py-3">
+                                <i class="bx bx-badge-check text-green-500 bx-md bx-fw"></i>
+                                <span class="font-medium text-gray-500"
+                                >100% Protection and Security for Your App</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full px-3 mb-12 lg:w-1/2 order-0 lg:order-1 lg:mb-0">
+                    <img
+                        class="mx-auto sm:max-w-sm lg:max-w-full"
+                        src="img/bg_love.svg"
+                        alt="feature image"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pt-7 pb-14">
+        <div class="container px-8 mx-auto sm:px-12 lg:px-20">
+            <h1
+                class="
+						text-sm
+						font-bold
+						tracking-wide
+						text-center text-gray-800
+						uppercase
+						mb-7
+					"
+            >
+                Trusted by top-leading companies.
+            </h1>
+            <div class="grid items-center justify-center grid-cols-12 gap-y-8">
+                <div
+                    class="
+							flex
+							items-center
+							justify-center
+							col-span-6
+							sm:col-span-4
+							md:col-span-3
+							xl:col-span-2
+						"
+                >
+                    <img
+                        src="https://cdn.devdojo.com/tails/images/disney-plus.svg"
+                        alt="Disney Plus"
+                        class="block object-contain h-12"
+                    />
+                </div>
+                <div
+                    class="
+							flex
+							items-center
+							justify-center
+							col-span-6
+							sm:col-span-4
+							md:col-span-3
+							xl:col-span-2
+						"
+                >
+                    <img
+                        src="https://cdn.devdojo.com/tails/images/google.svg"
+                        alt="Google"
+                        class="block object-contain h-9"
+                    />
+                </div>
+                <div
+                    class="
+							flex
+							items-center
+							justify-center
+							col-span-6
+							sm:col-span-4
+							md:col-span-3
+							xl:col-span-2
+						"
+                >
+                    <img
+                        src="https://cdn.devdojo.com/tails/images/hubspot.svg"
+                        alt="Hubspot"
+                        class="block object-contain h-9"
+                    />
+                </div>
+                <div
+                    class="
+							flex
+							items-center
+							justify-center
+							col-span-6
+							sm:col-span-4
+							md:col-span-3
+							xl:col-span-2
+						"
+                >
+                    <img
+                        src="https://cdn.devdojo.com/tails/images/youtube.svg"
+                        alt="Youtube"
+                        class="block object-contain h-7 lg:h-8"
+                    />
+                </div>
+                <div
+                    class="
+							flex
+							items-center
+							justify-center
+							col-span-6
+							sm:col-span-4
+							md:col-span-6
+							xl:col-span-2
+						"
+                >
+                    <img
+                        src="https://cdn.devdojo.com/tails/images/slack.svg"
+                        alt="Slack"
+                        class="block object-contain h-9"
+                    />
+                </div>
+                <div
+                    class="
+							flex
+							items-center
+							justify-center
+							col-span-6
+							sm:col-span-4
+							md:col-span-6
+							xl:col-span-2
+						"
+                >
+                    <img
+                        src="https://cdn.devdojo.com/tails/images/shopify.svg"
+                        alt="Shopify"
+                        class="block object-contain h-9"
+                    />
                 </div>
             </div>
         </div>
