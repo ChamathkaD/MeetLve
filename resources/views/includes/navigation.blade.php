@@ -1,9 +1,10 @@
-<nav class="bg-transparent">
+<nav x-data="{ open: false }" class="bg-transparent">
     <div class="max-w-screen mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button
+                    @click="open = !open"
                     type="button"
                     class="
 								inline-flex
@@ -21,6 +22,7 @@
                     <span class="sr-only">Open main menu</span>
 
                     <svg
+                        x-show="!open"
                         class="block h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -37,6 +39,7 @@
                     </svg>
 
                     <svg
+                        x-show="open"
                         class="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -170,7 +173,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu">
+    <div :class="{'hidden : !open'}" class="sm:hidden" id="mobile-menu">
         <div class="px-5 pt-2 space-y-1">
             <a
                 href="#"
