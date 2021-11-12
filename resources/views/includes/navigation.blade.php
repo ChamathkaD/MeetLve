@@ -173,7 +173,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div :class="{'hidden : !open'}" class="sm:hidden" id="mobile-menu">
+    <div :class="{'hidden' : !open}" class="sm:hidden" id="mobile-menu">
         <div class="px-5 pt-2 space-y-1">
             <a
                 href="#"
